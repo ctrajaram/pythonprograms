@@ -2,6 +2,28 @@ import struct as s
 
 
 def read_process_binary_file(binary_file_name):
+    """
+        Reads and processes a binary file according to a specific file structure.
+
+        The binary file is expected to have a header that includes a magic string,
+        version byte, and a 4-byte integer indicating the number of records.
+
+        Each record is expected to have a byte indicating the record type, a 4-byte
+        Unix timestamp, an 8-byte user ID, and for certain record types namely credit or debit, an 8-byte
+        floating point number representing a financial credit or debit amount.
+
+        This function reads the file, interprets the bytes according to this structure,
+        and calculates total debit and credit amounts. It also calculates the balance (credits - debits)
+        for a given user id
+
+        Args:
+            binary_file_name (str): The name of the binary file to be read and processed.
+
+        Returns:
+            dict: A dictionary containing 'total credit amount', 'total debit amount',
+                  and 'balance', rounded to 2 decimal places.
+            'balance' is calculated as 'total credit amount' - 'total debit amount'.
+        """
     # define the dictionary for capturing the totals
     dict_output_totals = {
         'total credit amount': 0.0,
