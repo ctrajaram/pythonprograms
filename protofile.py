@@ -23,7 +23,7 @@ def read_process_binary_file(binary_file_name):
             dict: A dictionary containing 'total credit amount', 'total debit amount',
                   and 'balance', rounded to 2 decimal places.
             'balance' is calculated as 'total credit amount' - 'total debit amount'.
-        """
+    """
     # define the dictionary for capturing the totals
     dict_output_totals = {
         'total credit amount': 0.0,
