@@ -37,9 +37,9 @@ def read_binary_file_custom_protocol(binary_file_name):
                     dict_output_totals['total credit amount'] += cost
                     if user_id == user_id_to_find_balance:
                         user_id_to_find_credit += cost  # obtaining the total debit for user id 2456938384156277127
-                elif record_type == 0x02:
+                elif record_type == 0x02:  # autopays started
                     dict_output_totals['autopays started'] += 1
-                elif record_type == 0x03:
+                elif record_type == 0x03:  # autopays ended
                     dict_output_totals['autopays ended'] += 1
     for key, value in dict_output_totals.items():
         if key in ['total debit amount', 'total credit amount']:
