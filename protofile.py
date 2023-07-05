@@ -1,7 +1,7 @@
 import struct as s
 
 
-def read_binary_file_custom_protocol(binary_file_name):
+def read_process_binary_file(binary_file_name):
     # define the dictionary for capturing the totals
     dict_output_totals = {
         'total credit amount': 0.0,
@@ -49,4 +49,4 @@ def read_binary_file_custom_protocol(binary_file_name):
 
 
 # Call the function passing the file
-read_binary_file_custom_protocol('txnlog.dat')
+read_process_binary_file('txnlog.dat')
